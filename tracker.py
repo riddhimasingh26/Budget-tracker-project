@@ -1,29 +1,29 @@
 import requests
 import re
 
-# ---------- Google Search Setup ----------
-API_KEY = "AIzaSyBRLcD8QCNo-VISEv8rHDw_Kx8-UPkylRY"   # <-- your Google API key
-SEARCH_ENGINE_ID = "550d9871ba32940db"  # <-- your custom search engine CX
+
+API_KEY = "AIzaSyBRLcD8QCNo-VISEv8rHDw_Kx8-UPkylRY"   
+SEARCH_ENGINE_ID = "550d9871ba32940db"  
 
 
-# ---------- Helper: Extract Price from Snippet ----------
+
 def extract_price(text):
     if not text:
         return None
-    match = re.search(r"₹\s?[\d,]+", text)   # looks for ₹ followed by numbers
+    match = re.search(r"₹\s?[\d,]+", text)   
     if match:
         return int(match.group(0).replace("₹", "").replace(",", "").strip())
     return None
 
 
-# ---------- Function: Search for alternatives & compare ----------
+#Function: Search for alternatives & compare 
 def search_alternative(product):
     url = "https://www.googleapis.com/customsearch/v1"
     params = {
         "key": API_KEY,
         "cx": SEARCH_ENGINE_ID,
         "q": f'"{product}" buy online site:amazon.in OR site:flipkart.com OR site:myntra.com',
-        "num": 10   # get top 10 results
+        "num": 10   #top 10 results in the market
     }
 
     response = requests.get(url, params=params).json()
@@ -79,7 +79,7 @@ def analyze_spending():
     return top_item
 
 
-# ---------- Main Program ----------
+# Main Program
 while True:
     print("\n--- Budget Tracker ---")
     print("1. Add Transaction")
