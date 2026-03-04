@@ -51,28 +51,6 @@ User Input --> Budget Tracker --> API Request --> Cheaper Alternatives --> User 
 
 ---
 
-Installation ⚙️
-
-# Clone the repo
-git clone https://github.com/your-username/budget-tracker.git
-
-# Navigate into the folder
-cd budget-tracker
-
-# Optional: create a virtual environment
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate     # Windows
-
-# Install dependencies
-pip install -r requirements.txt
-
-> Add your API keys in config.py or .env to enable cheaper alternative suggestions.
-
-
-
-
----
 
 Usage 💻
 
