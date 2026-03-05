@@ -46,7 +46,6 @@ API Flow Diagram
 
 User Input --> Budget Tracker --> API Request --> Cheaper Alternatives --> User Output
 
-(You can replace this with a visual diagram using tools like draw.io or Canva for your GitHub README)
 
 
 ---
